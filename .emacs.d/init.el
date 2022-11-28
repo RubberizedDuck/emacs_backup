@@ -1,4 +1,3 @@
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -23,3 +22,18 @@
  '(link ((t (:foreground "cyan" :underline t))))
  '(minibuffer-prompt ((t (:foreground "white"))))
  '(window-divider-last-pixel ((t (:foreground "magenta")))))
+
+;; Here, the size of a tab character in Emacs is set to 8,
+;; so Emacs will display 8 spaces on your screen to represent a single tab
+(setq c-default-style "bsd"
+      c-basic-offset 8
+      tab-width 8
+      indent-tabs-mode t)
+
+;; highlight lines exceeding 80 characters and trailing whitespace
+(require 'whitespace)
+(setq whitespace-style '(face empty lines-tail trailing))
+(global-whitespace-mode t)
+
+;; Adds current column along with line
+(setq column-number-mode t)
